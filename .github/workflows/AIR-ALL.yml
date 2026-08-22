@@ -39,6 +39,12 @@ jobs:
         SOURCE: [bingoguo93/immortalwrt]
         BRANCH: [openwrt-24.10]
 
+    # 设置环境变量，允许Go自动下载所需版本
+    env:
+      GOTOOLCHAIN: auto
+      # 可选：强制使用特定Go版本，如果需要
+      # GO_VERSION: 1.24.7
+    
     #调用公用编译核心WRT-CORE.yml
     uses: ./.github/workflows/WRT-CORE.yml
     with:
